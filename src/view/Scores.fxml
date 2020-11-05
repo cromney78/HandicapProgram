@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="661.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ScoresController">
+      <stylesheets>
+        <URL value="@/css/modena_dark.css" />
+    </stylesheets>
+<children>
+            <TabPane layoutX="319.0" layoutY="45.0" prefHeight="280.0" prefWidth="300.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab fx:id="tabGolfers" text="Golfers">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="tblViewGolfers" onMouseClicked="#setGolferName" prefHeight="242.0" prefWidth="300.0">
+                                <columns>
+                                  <TableColumn fx:id="colLastName" minWidth="100.0" prefWidth="150.0" text="Last Name" />
+                                  <TableColumn fx:id="colFirstName" minWidth="100.0" prefWidth="150.0" text="First Name" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab fx:id="tabScores" text="Scores">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="tblViewScores" prefHeight="242.0" prefWidth="300.0">
+                                 <columns>
+                                    <TableColumn fx:id="colScoreLastName" prefWidth="150.0" text="Player Name" />
+                                    <TableColumn fx:id="colRecentScore" prefWidth="150.0" text="Score" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane><Label layoutX="251.0" layoutY="14.0" text="Enter Scores">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <GridPane layoutY="91.0" prefHeight="237.0" prefWidth="300.0">
+              <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="90.0" minWidth="10.0" prefWidth="90.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="210.0" minWidth="10.0" prefWidth="210.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label fx:id="lblGolferName" text="Golfer: " textAlignment="RIGHT" />
+                  <TextField fx:id="txtFieldGolferName" disable="true" editable="false" focusTraversable="false" promptText="Please select from list" GridPane.columnIndex="1">
+                     <GridPane.margin>
+                        <Insets left="5.0" right="10.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <Label fx:id="lblGolfCourse" text="Course: " GridPane.rowIndex="1" />
+            <ComboBox fx:id="comboBoxCourses" prefHeight="28.0" prefWidth="213.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="5.0" right="10.0" />
+               </GridPane.margin>
+            </ComboBox>
+                  <Label fx:id="lblScore" text="Score: " GridPane.rowIndex="2" />
+                  <TextField fx:id="txtFieldScore" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets left="5.0" right="10.0" />
+                     </GridPane.margin>
+                  </TextField>
+            <Label fx:id="lblHandicap" text="Handicap: " textAlignment="RIGHT" GridPane.rowIndex="3" />
+            <TextField fx:id="txtFieldHandicap" disable="true" editable="false" focusTraversable="false" promptText="More Scores Needed" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+               </children>
+            </GridPane>
+            <HBox layoutX="168.0" layoutY="341.0" prefHeight="59.0" prefWidth="265.0">
+               <children>
+                  <Button fx:id="btnSave" mnemonicParsing="false" onAction="#btnSavePressed" text="Save">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnEdit" mnemonicParsing="false" onAction="#btnEditPressed" text="Edit">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#btnDeletePressed" text="Delete">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnCancel" mnemonicParsing="false" onAction="#btnCancelPressed" text="Close">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+      </children>
+</AnchorPane>

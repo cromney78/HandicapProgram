@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.GolferController">
+    <stylesheets>
+        <URL value="@/css/modena_dark.css" />
+    </stylesheets>
+
+<children>
+            <TableView fx:id="tblViewGolfers" layoutX="308.0" layoutY="51.0" prefHeight="275.0" prefWidth="284.0">
+              <columns>
+                <TableColumn fx:id="colGolferLastName" prefWidth="107.0" text="Last Name" />
+            <TableColumn fx:id="colGolferFirstName" prefWidth="96.0" text="First Name" />
+                <TableColumn fx:id="colGolferHandicap" text="Handicap" />
+              </columns>
+            </TableView>
+            <Label layoutX="227.0" layoutY="21.0" text="Golfer Information">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <GridPane layoutY="48.0" prefHeight="281.0" prefWidth="300.0">
+              <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="90.0" minWidth="10.0" prefWidth="90.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="210.0" minWidth="10.0" prefWidth="210.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label fx:id="lblGolferId" text="Golfer ID: " textAlignment="RIGHT" />
+                  <TextField fx:id="txtFieldGolferID" disable="true" editable="false" focusTraversable="false" GridPane.columnIndex="1">
+                     <GridPane.margin>
+                        <Insets left="5.0" right="10.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <Label fx:id="lblFirstName" text="First Name: " GridPane.rowIndex="1" />
+                  <TextField fx:id="txtFieldFirstName" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="5.0" right="10.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <Label fx:id="lblLastName" text="Last Name: " GridPane.rowIndex="2" />
+                  <TextField fx:id="txtFieldLastName" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets left="5.0" right="10.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <Label fx:id="lblPhone" text="Phone: " GridPane.rowIndex="3" />
+                  <TextField fx:id="txtFieldPhone" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets left="5.0" right="10.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <Label fx:id="lblEmail" text="Email: " GridPane.rowIndex="4" />
+                  <TextField fx:id="txtFieldEmail" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets left="5.0" right="10.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <Label fx:id="lblHandicap" text="Handicap: " GridPane.rowIndex="5" />
+                  <TextField fx:id="txtFieldHandicap" disable="true" editable="false" promptText="Please Input Scores" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <GridPane.margin>
+                        <Insets left="5.0" right="10.0" />
+                     </GridPane.margin>
+                  </TextField>
+               </children>
+            </GridPane>
+            <HBox layoutX="168.0" layoutY="341.0" prefHeight="59.0" prefWidth="265.0">
+               <children>
+                  <Button fx:id="btnSave" mnemonicParsing="false" onAction="#btnSavePressed" text="Save">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnEdit" mnemonicParsing="false" onAction="#btnEditPressed" text="Edit">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#btnDeletePressed" text="Delete">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnCancel" mnemonicParsing="false" onAction="#btnCancelPressed" text="Close">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+      </children>
+</AnchorPane>
